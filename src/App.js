@@ -358,7 +358,47 @@ import Compalagnpage from "./pages/Compalagn";
 import Market from "./pages/Market";
 import FeedBack from "./pages/Feedback";
 import Stock from "./pages/Stockdashboard";
+import Bulk from "./pages/bulkPost";
+import Aicontentgenrator from "./pages/Aicontentgenrator";
 
+import Faquestions from "./pages/FAQuetion";
+import MobileAppQuestion from "./components/FAQ/MobileAppQuestion";
+import Users from "./pages/Users";
+import Update from "./components/user/update";
+import Plans from "./pages/Plan";
+import Updatepage from "./components/memberShip/update";
+import Caption from "./pages/caption";
+import Updatecaption from "./components/tools/captions/Update";
+import Group from "./pages/groupManager";
+import Watermark from "./components/tools/waterMark/Watermark";
+import Drafts from "./pages/Draft";
+import Schedul from "./pages/Schedules";
+
+import Settinggenral from "./pages/SidebarSetting";
+import Appereances from "./pages/Appereance";
+import Filemanage from "./pages/fileManagers";
+import Platforms from "./pages/platForm";
+import OpenAI from "./pages/openAi";
+import Notifications from "./pages/notifications";
+import Emails from "./pages/Email";
+import Emailcontents from "./pages/Emailcontent";
+import Configure from "./pages/Configure";
+import LoginAuth from "./pages/loginAuth";
+import ShortLinks from "./pages/shortLink";
+import Socialpage from "./pages/socialPage";
+import Cron from "./pages/Cron";
+import SocialNetwork from "./pages/socialNetwork";
+import SocialFacebook from "./pages/socialFacebook";
+import SocialInstagram from "./pages/socialInstagram";
+import SocialTwitter from "./pages/socialTwitter";
+import UpdateManagers from "./pages/updateManagers";
+import Prompiex from "./pages/Prompiex";
+import ImportPrompiex from "./pages/ImportPrompiex";
+import Composers from "./pages/composers";
+import Sidebargenral from "./pages/sidebargeneral";
+import EmailSidebar from "./pages/emailSidebar";
+import AccountSidebars from "./pages/accountSidebar";
+import AccountManagers from "./pages/AccountManagers";
 
 // import Marketing from "./pages/newProfile/marketing";
 // import Sales from "./pages/newProfile/sales";
@@ -598,19 +638,76 @@ function App() {
               <Route path="outerlots" element={<Outer />} />
               <Route path="menumanagement" element={<MenuManage />} />
               <Route path="rowmetrial" element={<Rowmet />} />
-            
-              <Route path="recipemanagement" element={<Recipe />} />
-              <Route path="foodcostingreport" element={<Foodcostingreport/>} />
-              <Route path="closingstock" element={<Closingdata/>} />
-              <Route path="inventorydashboard" element={<Inventorydash/>} />
-              <Route path="inventorychart" element={<Inventory/>} />
-              <Route path="compalagnpage" element={<Compalagnpage/>} />
-              <Route path="marketing" element={<Market/>} />
-              <Route path="feedback" element={<FeedBack/>} />
-              <Route path="stockdashboard" element={<Stock/>} />
 
+              <Route path="recipemanagement" element={<Recipe />} />
+              <Route path="foodcostingreport" element={<Foodcostingreport />} />
+              <Route path="closingstock" element={<Closingdata />} />
+              <Route path="inventorydashboard" element={<Inventorydash />} />
+              <Route path="inventorychart" element={<Inventory />} />
+              <Route path="compalagnpage" element={<Compalagnpage />} />
+              <Route path="marketing" element={<Market />} />
+              <Route path="feedback" element={<FeedBack />} />
+              {/*  Seema Stock */}
+
+              <Route path="stockdashboard" element={<Stock />} />
+              <Route path="bulkpost" element={<Bulk />} />
+              <Route path="aicontentgenrator" element={<Aicontentgenrator />} />
+              <Route path="prompiexs" element={<Prompiex />} />
+              <Route path="importprompiex" element={<ImportPrompiex />} />
+              <Route path="faqsmanager" element={<Faquestions />} />
+              <Route
+                path="faqsmanager/faqupdate"
+                element={<MobileAppQuestion />}
+              />
+              <Route path="user" element={<Users />} />
+              <Route path="user/update" element={<Update />} />
+              <Route path="membership" element={<Plans />} />
+              <Route path="membership/update" element={<Updatepage />} />
+              <Route path="caption" element={<Caption />} />
+              <Route path="caption/update" element={<Updatecaption />} />
+              <Route path="groupmanager" element={<Group />} />
+              <Route path="update" element={<UpdateManagers />} />
+              <Route path="watermark" element={<Watermark />} />
+              <Route path="draft" element={<Drafts />} />
+              <Route path="schedule" element={<Schedul />} />
+              <Route path="composer" element={<Composers />} />
+
+              <Route path="/sidebar" element={<Sidebargenral />}>
+                <Route index element={<Navigate to="settingenral" />} />
+                <Route path="settingenral" element={<Settinggenral />} />
+                <Route path="appearance" element={<Appereances />} />
+                <Route path="filemanager" element={<Filemanage />} />
+                <Route path="platform" element={<Platforms />} />
+                <Route path="openai" element={<OpenAI />} />
+                <Route path="notification" element={<Notifications />} />
+                <Route path="loginauth" element={<LoginAuth />} />
+                <Route path="shortlink" element={<ShortLinks />} />
+                <Route path="socialpage" element={<Socialpage />} />
+                {/* <Route path="proxysystem" element={<ProxySystem />} /> */}
+                <Route path="crons" element={<Cron />} />
+                {/* <Route path="language" element={<Language />} /> */}
+                {/* <Route path="other" element={<Other />} /> */}
+              </Route>
+              <Route path="socialnetwork" element={<SocialNetwork />}>
+                <Route index element={<Navigate to="socialinstagram" />} />
+                <Route path="socialinstagram" element={<SocialInstagram />} />
+                <Route path="socialfacebook" element={<SocialFacebook />} />
+                <Route path="socialtwitter" element={<SocialTwitter />} />
+              </Route>
+              <Route path="emailsidebar" element={<EmailSidebar />}>
+                <Route index element={<Navigate to="emailtemplate" />} />
+                <Route path="emailtemplate" element={<Emails />} />
+                <Route path="emailcontent" element={<Emailcontents />} />
+                <Route path="configuremail" element={<Configure/>} />
+               
+              </Route>
+
+              <Route path="accountsidebar" element={<AccountSidebars />}>
+              <Route index element={<Navigate to="accountmanager" />} />
+              <Route path="accountmanager" element={<AccountManagers />} />
+              </Route>
             </Route>
-            -
+
           </>
         )}
       </Routes>
